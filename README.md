@@ -19,7 +19,7 @@ On the standard puzzle, the Rainbow Master (sometimes known as the 'geomaster'),
                                                                              taken from=https://www.jaapsch.net/puzzles/master.htm
 
 # Purpose
-This program tries todo a simulation of the masterball using a matrix as interface and numbers as the different colors.
+This program tries to do a simulation of the masterball using a matrix as interface and numbers as the different colors.
 
 # requirements
  • language: C++.
