@@ -4,16 +4,15 @@ using namespace std;
 
 int main()
 {
-	//imprimir masterball
+	//print masterball
 	unsigned int x,y;
 	int mB[4][8]{{1,2,3,4,5,6,7,8},
 				 {1,2,3,4,5,6,7,8},
 				 {1,2,3,4,5,6,7,8},
 				 {1,2,3,4,5,6,7,8}};
 	string repetir;
-	cout<<"Vamos a mover la Master Ball. \n\n"
-		<<"Si durante el proceso digita valores diferentes a los enteros positivos, "
-		<<"\x82"<<"ste se realizar"<<"\xA0"<<" de manera err"<<"\xA2"<<"nea. \n\n";
+	cout<<"Let's move the Masterball. \n\n"
+		<<"If during the proccess you type negative values, the program will not work properly. \n\n";
 	for(x=0;x<=3;x++)
 	{
 		for(y=0;y<=7;y++)
@@ -25,23 +24,23 @@ int main()
 	do
 	{
 	unsigned int f[4]={0},m[4],i,j,in,opcion,ol,c[8],w,a,z;
-	cout<<"\n1 para mover la masterball hacia la izquierda."
-		<<"\n2 para mover la masterball hacia la derecha."
-		<<"\n3 para mover la masterball verticalmente.\n\n";
+	cout<<"\n1 to move the masterball to the left."
+		<<"\n2 to move the masterball to the right."
+		<<"\n3 to move the masterball vertically.\n\n";
 	cin>>opcion;
 		while(opcion!=1 && opcion!=2 && opcion!=3)
 		{
-			cout<<"ingrese una opcion valida."<<endl;
+			cout<<"type a valid option."<<endl;
 			cin>>opcion;
 		}
 	switch(opcion)
 	{
         case 1:
 		{
-			cout<<"\n"<<"\xA8"<<"Cu"<<"\xA0"<<"l de las cuatro filas? \n\n";
+			cout<<"\n"<<"\xA8"<<"Which of the four rows? \n\n";
 			cin>> in;		
 			f[(in - 1)%4] = 1;
-			cout<<"\n"<<"\xA8"<<"Cuant"<<"\xA0"<<"s veces? \n\n";
+			cout<<"\n"<<"\xA8"<<"Hoy many times? \n\n";
 			cin>>m[0];
 			for(int i = 0; i < 4; i++)
 			{
@@ -78,10 +77,10 @@ int main()
 		}
 		case 2:	
 		{
-			cout<<"\n"<<"\xA8"<<"Cu"<<"\xA0"<<"l de las cuatro filas? \n\n";
+			cout<<"\n"<<"\xA8"<<"Which of the four rows? \n\n";
 			cin>>in;
 			f[(in - 1)%4] = 1;
-			cout<<"\n"<<"\xA8"<<"Cu"<<"\xA0"<<"ntas veces? \n\n";
+			cout<<"\n"<<"\xA8"<<"Hoy many times? \n\n";
 			cin>>m[1];
 			for(i = 0; i < 4; i++)
 			{
@@ -119,13 +118,13 @@ int main()
 		case 3:
 		{
 
-			cout<<"-Tenga en cuenta que para hacer un movimiento vertical la masterball girar"<<"\xA0"<<" 180"<<"\xF8"<<" para que las divisiones se alineen y se pueda ejecutar el movimiento horizontal.\n"
-			    <<"-Adem"<<"\xA0"<<"s al mover una columna, tambi"<<"\x82"<<"n mover"<<"\xA0"<<" las 3 que se encuentren al lado derecho de "<<"\x82"<<"sta debido a su estructura\n tridimensional.\n";
+			cout<<"-Keep in mind that in order to do a vertical movement in the masteball, rows have to be aligned.\n"
+			    <<"-Also, at moving a column, you will move the 3 thar are at the right side due to its tridimensional structure.\n";
 			cout<<"\n"<<"\xA8"<<"Cu"<<"\xA0"<<"l de las ocho columnas? \n\n";
 			cin>>ol;
 			c[(ol-1)%8]=1;
 			//c[(ol+3)%8]=1;
-			cout<<"\n"<<"\xA8"<<"Cuant"<<"\xA0"<<"s veces? \n\n";
+			cout<<"\n"<<"\xA8"<<"How many times? \n\n";
 			cin>>m[2];
 			w = -(m[2] % 8-8);
 			for(int j = 0; j < 8; j++)
@@ -148,27 +147,27 @@ int main()
 						y=c[j];
 						w= y;
 						int temp[8],arreglo[8];
-						//columna elejida 				
+						//column chosen 				
 						for(y=0; y<4;y++)
 						{
 							temp[y]=mB[3-y][j%8];
 						}
-						//segunda columna
+						//second column
 						for(x=4; x<8; x++)
 						{
 							temp[x]=mB[3+(4-x)][(j+1)%8];				
 						}				
-						//tercera columna
+						//thid column
 						for(z=0; z<4;z++)
 						{
 							arreglo[z]=mB[3-z][(j+2)%8];
 						}
-						//cuarta columna
+						//fourth column
 						for(a=4; a<8; a++)
 						{
 							arreglo[a]=mB[3+(4-a)][(j+3)%8];				
 						}	
-						//equivalencias
+						//equivalences
 						for(int i=0;i<4;i++)
 						{
 							mB[i][(j+3)%8]=temp[i];
@@ -199,8 +198,8 @@ int main()
 			break;
 		}
 	}
-		cout<<"\n"<<"\xA8"<<"Desea hacer otro movimiento?\n\nEscriba -si- para hacer otro movimiento, escriba -no- para salir.\n\n";	
+		cout<<"\n"<<"\xA8"<<"Do you want to do another movement?\n\ntype -yes- to do another movement, type -no- to exit.\n\n";	
 		cin>>repetir;
-	}while (repetir=="si");
+	}while (repetir=="yes");
 return(0);
 }
